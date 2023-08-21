@@ -39,14 +39,8 @@ background-color: #87A2FB;
 
 .top-cloud {
   position: absolute;
-  right: 300px;
+  right: 400px;
   top: 50px;
-}
-
-.bottom-cloud {
-  position: absolute;
-  left: 250px;
-  bottom: 60px;
 }
 
 .middle-container {
@@ -83,7 +77,9 @@ background-color: #87A2FB;
   float: right;
   margin-left: 30px;
 }
-
+.contact-me{
+  margin:90px auto;
+}
 .btn {
   background: #645CAA;
   border-radius: 10px;
@@ -92,7 +88,6 @@ background-color: #87A2FB;
   font-size: 30px;
   text-decoration: none;
   display: inline-block;
-  margin-bottom: 25px;
   padding: 20px 20px;
 }
 .btn:hover {
@@ -101,10 +96,9 @@ background-color: #87A2FB;
 
 .footer-link{
   color: #182747;
+  font-size: 20px;
   font-family: 'Montserrat', sans-serif;
   margin:0 10px;
-  padding:10px;
-  font-size: 20px;
   text-decoration: none;
 }
 .footer-link:hover{
