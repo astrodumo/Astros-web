@@ -62,7 +62,7 @@ background-color: #87A2FB;
 
 .bottom-container {
   background-color: #87A2FB;
-  padding: 30px 0 5px;
+  padding: 30px 0 30px;
 }
 
 .skill-row {
@@ -103,6 +103,7 @@ background-color: #87A2FB;
   color: #182747;
   font-family: 'Montserrat', sans-serif;
   margin:0 10px;
+  padding:10px;
   font-size: 20px;
   text-decoration: none;
 }
