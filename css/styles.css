@@ -23,13 +23,16 @@ h3 {
   color: #87A2FB;
 }
 
+p{
+  font-size: 100%;
+}
+
 hr{
   border: dotted #A1C298 6px;
   border-bottom: none;
   width: 4%;
   margin: 90px auto;
 }
-
 
 .top-container {
 background-color: #87A2FB;
@@ -77,9 +80,7 @@ background-color: #87A2FB;
   float: right;
   margin-left: 30px;
 }
-.contact-me{
-  margin:90px auto;
-}
+
 .btn {
   background: #645CAA;
   border-radius: 10px;
@@ -88,6 +89,7 @@ background-color: #87A2FB;
   font-size: 30px;
   text-decoration: none;
   display: inline-block;
+  margin: 50px auto;
   padding: 20px 20px;
 }
 .btn:hover {
