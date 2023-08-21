@@ -60,10 +60,6 @@ background-color: #87A2FB;
     transform: scale(1.1);
     }
 
-    .contact-me{
-      margin: 80px auto;
-    }
-
 .bottom-container {
   background-color: #87A2FB;
   padding: 30px 0 5px;
@@ -105,7 +101,7 @@ background-color: #87A2FB;
 a {
   color: #182747;
   font-family: 'Montserrat', sans-serif;
-  margin: 5px 10px;
+  margin: 10px 10px;
   text-decoration: none;
 }
 a:hover{
