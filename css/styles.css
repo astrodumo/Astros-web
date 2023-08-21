@@ -104,7 +104,6 @@ background-color: #87A2FB;
 
 a {
   color: #182747;
-   font-size: 75%;
   font-family: 'Montserrat', sans-serif;
   margin: 5px 10px;
   text-decoration: none;
@@ -114,7 +113,7 @@ a:hover{
 }
 
 .copyright{
+  font-size: 50%
   color: #EAF6F6;
-  font-size: 16px;
   padding: 20px 0;
 }
