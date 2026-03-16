@@ -1,183 +1,559 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Astro's Web 🚀</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@600&family=Poppins:wght@400;600&display=swap"
-          rel="stylesheet">
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- ─── SEO — update these ─────────────────────── -->
+  <title>Frontend Developer & UI Craftsperson | Alwell Kariboro</title>
+  <meta name="description" content="Frontend Developer with 3 years of experience. I build pixel-perfect interfaces, design systems, and delightful user experiences.">
+  <link rel="canonical" href="https://alexrivera.dev" />
+
+  <meta property="og:title"       content="Alex Rivera — Frontend Developer & UI Craftsperson">
+  <meta property="og:description" content="I build the interfaces people feel. React, design systems, and web performance.">
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://alexrivera.dev">
+  <!-- og:image → add a 1200×630 screenshot of the site once deployed -->
+  <!-- <meta property="og:image" content="https://alexrivera.dev/og-image.png"> -->
+
+  <!-- ─── Fonts ───────────────────────────────────── -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- ─── Styles ──────────────────────────────────── -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- ─── Favicon (add your own files in /assets/) ── -->
+  <!-- <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png"> -->
 </head>
+<body>
 
-<body class="text-neutral-700">
-<div class="container mx-auto">
+  <!-- Cursor glow blob (desktop only, hidden on touch) -->
+  <div id="cursor-glow" aria-hidden="true"></div>
 
-    <div class="flex flex-col pb-16">
-        <div class="py-10">
-            <span class="logo-name">
-                AK.
-            </span>
+  <!-- ═══════════════════════════════════════════════
+       NAV
+  ═══════════════════════════════════════════════ -->
+  <nav>
+    <div class="container">
+      <div class="nav-inner">
+        <!-- ── Change "alex.rivera" to your name ── -->
+        <a href="#" class="logo">Alwell<span>.</span>Kariboro</a>
+
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+
+        <div class="nav-links" id="navLinks">
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#work">Work</a>
+          <a href="#contact" class="nav-cta">
+            Let's Talk
+            <svg class="arrow-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
         </div>
-        <div class="flex-1 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center py-24">
-            <div>
-                <h6 class="text-xl text-neutral-500 leading-none">Hello, my name is</h6>
-                <h1 class="text-5xl leading-tight pb-8">
-                    Alwell <span class="hero-slogan">Kariboro</span>
-                </h1>
-                <h4 class="text-neutral-500 text-justify leading-loose pb-12">
-                    With considerable experience in software development, my passion is building innovative
-                    solutions done to my profound satisfaction & to your profound astonishment.
-                </h4>
-                <div class="flex flex-col lg:flex-row gap-8 items-center">
-                    <button class="primary-button text-xl"
-                            onclick="document.getElementById('contact-box').scrollIntoView({behavior: 'smooth'});">
-                        Let's work together!
-                    </button>
-                   
-</div>
-
-
-            </div>
-            <div class="hidden lg:block">
-                <img class="w-full" src="https://www.michalzakrzewski.com/images/hero-image.svg" alt="">
-            </div>
-        </div>
+      </div>
     </div>
+  </nav>
 
+  <!-- ═══════════════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════════════ -->
+  <section id="hero">
+    <!-- Decorative large letter — change to your initial -->
+    <div class="hero-deco" aria-hidden="true">F</div>
 
-    <div class="section">
-        <h6 class="section-desc">Services</h6>
-        <h2 class="section-title">How I can help</h2>
-        <div class="section-lines">
-            <div></div>
-            <div></div>
-        </div>
-    </div>
+    <div class="container" style="position:relative;z-index:2;">
+      <div class="hero-badge">
+        <div class="hero-badge-dot"></div>
+        <!-- ── Update your availability status ── -->
+        <span>Available for Projects</span>
+      </div>
 
-    <p class="leading-loose text-justify pb-24">
-        From custom software applications to performance optimization and
-        on-demand scripting,
-        I offer a range of web development services designed to streamline your operations, improve
-        productivity and growth.
-    </p>
+      <!-- ── Your headline ── -->
+      <h1 class="hero-h1">
+        I craft interfaces<br>
+        people <em>feel</em>
+      </h1>
 
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 pb-48">
-        <div class="services-box">
-            <div>
-                <img src="https://www.michalzakrzewski.com/images/devices.svg"/>
-            </div>
-            <div>
-                <h3>Design & Development</h3>
-                <p>
-                    Design and develop software applications that are tailored to your business needs &  build websites that delight and inform, I do it well.
-                </p>
-            </div>
-        </div>
-        <div class="services-box">
-            <div>
-                <img src="https://www.michalzakrzewski.com/images/rocket.svg"/>
-            </div>
-            <div>
-                <h3>Performance Boost</h3>
-                <p>
-                    Optimize existing software applications to improve speed, efficiency, and scalability, ensuring they
-                    can handle your tasks.
-                </p>
-            </div>
-        </div>
-        <div class="services-box">
-            <div>
-                <img src="https://www.michalzakrzewski.com/images/script.svg"/>
-            </div>
-            <div>
-                <h3>On-Demand Scripting</h3>
-                <p>
-                    Create custom scripts and automation tools to help you work smarter and save time by automating
-                    repetitive tasks.
-                </p>
-            </div>
-        </div>
-        
-    </div>
+      <!-- ── Your one-liner ── -->
+      <p class="hero-desc">
+        3 years turning complex products into fluid, intuitive experiences.
+        I specialise in React, design systems, and the kind of frontend
+        polish that turns users into advocates.
+      </p>
 
-    <div class="section">
-        <h6 class="section-desc">About me</h6>
-        <h4 class="section-title">I'm actually a chemistry student cleverly disguised as a Web developer and Web3 Strategist.</h4>
-        <div class="section-lines">
-            <div></div>
-            <div></div>
-        </div>
-    </div>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">
+          Start a Project
+          <svg class="arrow-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#work" class="btn-secondary">
+          View My Work
+          <svg class="arrow-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
 
-    <div class="pb-24 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-
-        <div class="leading-loose">
-            <p class="text-justify pb-12">
-                I spend practcally everyday, experimenting with HTML, CSS and JavaScript and I enjoy work that challenges me to learn new things and stretch me in a different direction. I have worked with a variety of technologies, primarily in the web development space, and
-                I'm passionate about building seamless software solutions. 
-            </p>
-            <p class="text-justify">
-                 Outside of work, I enjoy exploring new technologies and staying up-to-date with the latest
-                industry trends.
-            </p>
-        </div>
-
+      <!-- ── Update your stats ── -->
+      <div class="hero-stats">
         <div>
-             <img class="drop-shadow-xl w-full" src="image\astrodumo.png" alt="Alwell's Image">
-
+          <div class="stat-num">3+</div>
+          <div class="stat-label">Years of experience</div>
         </div>
-
-    </div>
-
-
-    <div class="section" id="contact-box">
-        <h6 class="section-desc">Contact</h6>
-        <h2 class="section-title">Let's get in touch</h2>
-        <div class="section-lines">
-            <div></div>
-            <div></div>
-        </div>
-    </div>
-
-    <div class="pb-24 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        <div class="text-justify">
-            <p class="pb-6">I enjoy what I do, and I enjoy sharing tidbits with others.</p>
-            <p>Get in touch with me by email or connect with me on social media.</p> 
-        </div>
-
-        <div class="text-center">
-            <p class="lg:text-2xl pb-6">info.appleshinobi@gmail.com</p>
-            <div class="wrapper">
-                <div class="icon linkedin">
-                    <div class="tooltip"></div>
-                    <a href="https://www.linkedin.com/in/alwell-kariboro-957806278" target="_blank"><span><i class="fab fa-linkedin-in"></i></span>
-                    </a>
-                  </div>
-                
-                  <div class="icon github">
-                    <div class="tooltip"></div>
-                    <a href="https://github.com/astrodumo" target="_blank"><span><i class="fab fa-github"></i></span></a>
-                    
-                 </div>
-              
-                  <div class="icon twitter">
-                    <div class="tooltip"></div>
-                    <a href="https://twitter.com/astrodumo?t=jNQSmEOppXxFazSf_G0Qiw&s=09" target="_blank"><span><i class="fab fa-twitter"></i></span></a>
-                    
-            </div>
-     </div>
-
-    <div class="py-24 text-neutral-400 text-sm text-center lg:text-center">
         <div>
-            Copyright © 2023 Astrodumo 
+          <div class="stat-num">16+</div>
+          <div class="stat-label">Products shipped</div>
         </div>
+        <div>
+          <div class="stat-num">2×</div>
+          <div class="stat-label">Avg conversion lift</div>
+        </div>
+      </div>
     </div>
+  </section>
 
-</div>
+  <!-- ═══════════════════════════════════════════════
+       SKILLS TICKER
+       Add / remove skills as needed
+  ═══════════════════════════════════════════════ -->
+  <div class="ticker-wrap" aria-hidden="true">
+    <div class="ticker-track">
+      <span class="ticker-item">React <span class="ticker-dot"></span></span>
+      <span class="ticker-item">TypeScript <span class="ticker-dot"></span></span>
+      <span class="ticker-item">Design Systems <span class="ticker-dot"></span></span>
+      <span class="ticker-item">Next.js <span class="ticker-dot"></span></span>
+      <span class="ticker-item">Framer Motion <span class="ticker-dot"></span></span>
+      <span class="ticker-item">Accessibility <span class="ticker-dot"></span></span>
+      <span class="ticker-item">Storybook <span class="ticker-dot"></span></span>
+      <span class="ticker-item">Tailwind CSS <span class="ticker-dot"></span></span>
+      <span class="ticker-item">WebGL <span class="ticker-dot"></span></span>
+      <span class="ticker-item">Performance <span class="ticker-dot"></span></span>
+      <!-- Duplicate items below — required for seamless loop animation -->
+      <span class="ticker-item">React <span class="ticker-dot"></span></span>
+      <span class="ticker-item">TypeScript <span class="ticker-dot"></span></span>
+      <span class="ticker-item">Design Systems <span class="ticker-dot"></span></span>
+      <span class="ticker-item">Next.js <span class="ticker-dot"></span></span>
+      <span class="ticker-item">Framer Motion <span class="ticker-dot"></span></span>
+      <span class="ticker-item">Accessibility <span class="ticker-dot"></span></span>
+      <span class="ticker-item">Storybook <span class="ticker-dot"></span></span>
+      <span class="ticker-item">Tailwind CSS <span class="ticker-dot"></span></span>
+      <span class="ticker-item">WebGL <span class="ticker-dot"></span></span>
+      <span class="ticker-item">Performance <span class="ticker-dot"></span></span>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════
+       ABOUT
+  ═══════════════════════════════════════════════ -->
+  <section id="about">
+    <div class="container">
+      <div class="about-grid">
+        <!-- Left: Story copy -->
+        <div class="about-body reveal">
+          <div class="section-label">
+            <span class="label">About</span>
+          </div>
+          <h2 class="about-h2">
+            I build the interfaces that make <em>people stay</em>
+          </h2>
+          <p>Your product may be powerful under the hood — but if the interface is confusing, slow, or visually inconsistent, users won't stick around to find out. I close that gap between engineering and experience.</p>
+          <p>Over the past decade I've worked with product teams ranging from seed-stage startups to Series B companies, translating design specs into polished, accessible, and performant UIs that actually delight the people using them.</p>
+          <p>I think in components, tokens, and interaction states. I care about the 200ms hover delay as much as the overall architecture. That precision is why teams keep coming back.</p>
+          <div class="blockquote">
+            <p>"Great UI isn't decoration — it's the product experience. Every pixel is a decision about what your users will feel."</p>
+          </div>
+        </div>
+
+        <!-- Right: Approach cards -->
+        <div class="approach-cards reveal reveal-delay-2">
+          <div class="approach-card">
+            <div class="approach-num">01</div>
+            <div>
+              <div class="approach-title">Design Fidelity</div>
+              <div class="approach-desc">I implement designs with obsessive pixel precision, bridging the gap between Figma and the browser — including edge cases your designer didn't document.</div>
+            </div>
+          </div>
+          <div class="approach-card">
+            <div class="approach-num">02</div>
+            <div>
+              <div class="approach-title">Component Thinking</div>
+              <div class="approach-desc">Every UI I build is modular, documented, and tested. I write components your team can confidently extend without rewriting from scratch six months later.</div>
+            </div>
+          </div>
+          <div class="approach-card">
+            <div class="approach-num">03</div>
+            <div>
+              <div class="approach-title">Performance as UX</div>
+              <div class="approach-desc">A 3-second load is a broken experience. I obsess over Core Web Vitals, bundle sizes, and render cycles — because speed is a feature your users notice instantly.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       SERVICES
+  ═══════════════════════════════════════════════ -->
+  <section id="services">
+    <div class="container">
+      <div class="services-header reveal">
+        <div>
+          <div class="section-label"><span class="label">Services</span></div>
+          <h2 class="services-h2">What you get<br>working with me</h2>
+        </div>
+        <p class="services-sub">Polished interfaces, scalable component systems, and measurable UX improvements — delivered fast.</p>
+      </div>
+
+      <div class="services-grid">
+        <!-- ── Service 1 ── -->
+        <div class="service-card reveal reveal-delay-1">
+          <div class="service-card-top">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            </div>
+            <span class="service-num">01</span>
+          </div>
+          <h3 class="service-title">UI Engineering & Implementation</h3>
+          <p class="service-sub">Pixel-perfect interfaces that actually ship on time</p>
+          <ul class="service-features">
+            <li><strong>Design-to-Code Fidelity:</strong> I implement every animation, spacing token, and interaction state — no "close enough" compromises.</li>
+            <li><strong>Responsive Across Devices:</strong> Fluid layouts that work flawlessly from 320px mobile to 4K displays without hacks.</li>
+            <li><strong>Accessible by Default:</strong> WCAG 2.1 AA compliant — keyboard nav, screen reader support, and focus management baked in from day one.</li>
+          </ul>
+          <hr class="service-divider">
+          <p class="service-desc">React, TypeScript, Next.js, and modern CSS. Semantic markup, clean component APIs, and code your future self will thank you for.</p>
+          <a href="#contact" class="service-link">Discuss your project <svg class="arrow-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+
+        <!-- ── Service 2 ── -->
+        <div class="service-card reveal reveal-delay-2">
+          <div class="service-card-top">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/></svg>
+            </div>
+            <span class="service-num">02</span>
+          </div>
+          <h3 class="service-title">Design Systems & Component Libraries</h3>
+          <p class="service-sub">Build once, ship everywhere — with confidence</p>
+          <ul class="service-features">
+            <li><strong>Scalable Token Architecture:</strong> Semantic colour, typography, and spacing tokens that make brand updates a one-line change rather than a week-long audit.</li>
+            <li><strong>Living Storybook Docs:</strong> Every component documented with examples, props, accessibility notes, and do/don't guidelines your team will actually use.</li>
+            <li><strong>Multi-brand Support:</strong> Theming architecture that lets you skin the same component library for 10 clients without a single fork.</li>
+          </ul>
+          <hr class="service-divider">
+          <p class="service-desc">Storybook, Radix UI primitives, CVA, and design token pipelines (Style Dictionary). Built to last, not just to launch.</p>
+          <a href="#contact" class="service-link">Build your system <svg class="arrow-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+
+        <!-- ── Service 3 ── -->
+        <div class="service-card reveal reveal-delay-1">
+          <div class="service-card-top">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            </div>
+            <span class="service-num">03</span>
+          </div>
+          <h3 class="service-title">Animation & Interaction Design</h3>
+          <p class="service-sub">Motion that communicates, not just decorates</p>
+          <ul class="service-features">
+            <li><strong>Purposeful Motion:</strong> Every animation serves a UX goal — guiding attention, confirming actions, or creating spatial continuity between views.</li>
+            <li><strong>60fps Guaranteed:</strong> GPU-accelerated transforms, layout thrash elimination, and reduced-motion support for users who need it.</li>
+            <li><strong>Memorable Moments:</strong> Micro-interactions and page transitions that make your product feel premium — the kind users mention in reviews.</li>
+          </ul>
+          <hr class="service-divider">
+          <p class="service-desc">Framer Motion, GSAP, CSS transitions and View Transitions API. I know when to animate and — just as importantly — when to stop.</p>
+          <a href="#contact" class="service-link">Bring motion to life <svg class="arrow-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+
+        <!-- ── Service 4 ── -->
+        <div class="service-card reveal reveal-delay-2">
+          <div class="service-card-top">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <span class="service-num">04</span>
+          </div>
+          <h3 class="service-title">Frontend Architecture & Consulting</h3>
+          <p class="service-sub">Senior-level clarity without the full-time price tag</p>
+          <ul class="service-features">
+            <li><strong>Tech Decision Support:</strong> Framework selection, state management strategy, and monorepo setup — with honest trade-off analysis, not trend-chasing.</li>
+            <li><strong>Performance Audits:</strong> LCP, CLS, INP and bundle analysis with a prioritised fix plan. I've cut load times in half without touching the backend.</li>
+            <li><strong>Team Mentorship:</strong> Code reviews, pairing sessions, and architecture workshops that level up your developers faster than any course.</li>
+          </ul>
+          <hr class="service-divider">
+          <p class="service-desc">Tech stack reviews, Core Web Vitals optimisation, testing strategy, and CI/CD pipeline advice. Practical, opinionated, and focused on ROI.</p>
+          <a href="#contact" class="service-link">Book a consultation <svg class="arrow-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+
+      <!-- ── Process ── -->
+      <div class="process-section reveal">
+        <h3 class="process-h3">From Discovery to Launch in 3 Weeks</h3>
+        <p class="process-sub">A focused, transparent process that keeps your roadmap moving</p>
+        <div class="process-steps">
+          <div class="process-step">
+            <div class="week-label">Week 1</div>
+            <div class="process-icon-box">
+              <svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+            </div>
+            <div class="process-title">Discovery & Audit</div>
+            <div class="process-desc">Design review, codebase audit, and aligning on goals. I identify quick wins and flag risks before writing a line of code.</div>
+          </div>
+          <div class="process-step">
+            <div class="week-label">Week 2</div>
+            <div class="process-icon-box">
+              <svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+            <div class="process-title">Build & Iterate</div>
+            <div class="process-desc">Daily standups, staged PRs, and continuous design QA. You see real progress every day — no black box development.</div>
+          </div>
+          <div class="process-step">
+            <div class="week-label">Week 3</div>
+            <div class="process-icon-box">
+              <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <div class="process-title">QA & Handoff</div>
+            <div class="process-desc">Cross-browser testing, Lighthouse audits, Storybook docs, and a clean handoff your team can maintain without me.</div>
+          </div>
+          <div class="process-step highlight">
+            <div class="week-label">Outcome</div>
+            <div class="process-icon-box">
+              <svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+            </div>
+            <div class="process-title">Measurable Impact</div>
+            <div class="process-desc">Faster Core Web Vitals, a scalable component library, and a UI your users actually love — with metrics to prove it.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Services CTA ── -->
+      <div class="work-cta reveal">
+        <h3>Not sure where to start?</h3>
+        <p>Tell me about your project and I'll suggest the right engagement.</p>
+        <a href="#contact" class="btn-primary" style="margin:0 auto;">
+          Schedule a free call
+          <svg class="arrow-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       CASE STUDIES
+       Replace with your own projects
+  ═══════════════════════════════════════════════ -->
+  <section id="work">
+    <div class="container">
+      <div class="work-header reveal">
+        <div class="section-label"><span class="label">Case Studies</span></div>
+        <h2 class="work-h2">UI wins that moved the business needle</h2>
+        <p class="work-sub">Real projects where a relentless focus on frontend craft translated directly into user growth, conversion lifts, and engineering velocity.</p>
+      </div>
+
+      <div class="cases-grid">
+        <!-- ── Case Study 1 ── -->
+        <div class="case-card reveal reveal-delay-1">
+          <div class="case-top">
+            <div class="case-icon">
+              <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <span class="case-tag">Design System</span>
+          </div>
+          <h3 class="case-title">Unifying a fragmented SaaS UI across 4 product teams</h3>
+          <p class="case-desc">Four independent dev teams had accumulated four different button styles, three colour palettes, and zero shared components. UI inconsistencies were causing user confusion and slowing every team's velocity.</p>
+          <div class="case-solution">
+            <h4>The Solution</h4>
+            <ul>
+              <li>Built a token-based design system with 80+ Storybook-documented components</li>
+              <li>Established a semantic token layer enabling one-command brand theming</li>
+              <li>Ran component migration sprints with each team, zero big-bang rewrites</li>
+            </ul>
+          </div>
+          <div class="case-metrics">
+            <div class="metrics-row">
+              <div>
+                <div class="metric-label-b">Before</div>
+                <div class="metric-val-b">4–6 wk</div>
+                <div class="metric-desc">New feature UI time</div>
+              </div>
+              <div>
+                <div class="metric-label-a">After</div>
+                <div class="metric-val-a">1–2 wk</div>
+                <div class="metric-desc-a">New feature UI time</div>
+              </div>
+            </div>
+          </div>
+          <div class="case-result">
+            <div class="result-check">
+              <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div>
+              <div class="result-title">65% Developer Velocity Increase</div>
+              <p class="result-desc">Teams shipped UI features 3× faster and support tickets related to UI inconsistency dropped by 80%.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Case Study 2 ── -->
+        <div class="case-card reveal reveal-delay-2">
+          <div class="case-top">
+            <div class="case-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 20V10M18 20V4M6 20v-4"/></svg>
+            </div>
+            <span class="case-tag">Performance & Conversion</span>
+          </div>
+          <h3 class="case-title">Turning a 6.4s LCP into a conversion machine</h3>
+          <p class="case-desc">An e-commerce brand's marketing site was beautiful in Figma but sluggish in production. A 6.4-second Largest Contentful Paint was costing them an estimated 40% of mobile conversions before users even saw the offer.</p>
+          <div class="case-solution">
+            <h4>The Solution</h4>
+            <ul>
+              <li>Eliminated 380kb of unused JavaScript with route-based code splitting</li>
+              <li>Replaced above-the-fold CSS-in-JS with critical CSS + deferred styles</li>
+              <li>Implemented responsive image pipeline and Next/Image with AVIF output</li>
+            </ul>
+          </div>
+          <div class="case-metrics">
+            <div class="metrics-row">
+              <div>
+                <div class="metric-label-b">Before</div>
+                <div class="metric-val-b">6.4s</div>
+                <div class="metric-desc">Mobile LCP</div>
+              </div>
+              <div>
+                <div class="metric-label-a">After</div>
+                <div class="metric-val-a">1.1s</div>
+                <div class="metric-desc-a">Mobile LCP</div>
+              </div>
+            </div>
+          </div>
+          <div class="case-result">
+            <div class="result-check">
+              <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div>
+              <div class="result-title">+34% Mobile Conversion Rate</div>
+              <p class="result-desc">Performance score went from 41 to 98. The speed improvement directly recovered revenue that was silently leaking every day.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="work-cta reveal">
+        <h3>Want similar results for your product?</h3>
+        <p>Let's identify where your frontend is losing users — and fix it.</p>
+        <a href="#contact" class="btn-primary" style="margin:0 auto;">
+          Get a Frontend Audit
+          <svg class="arrow-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       CONTACT — update email & social links
+  ═══════════════════════════════════════════════ -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-label reveal"><span class="label">Get in Touch</span></div>
+      <h2 class="contact-h2 reveal">Let's build something <em>unforgettable</em> together</h2>
+      <p class="contact-sub reveal">Available for contract projects and consulting engagements. Whether you need a design system built from scratch, a UI performance rescue, or ongoing frontend partnership — let's talk.</p>
+
+      <div class="contact-cards">
+        <!-- ── Update href to your email ── -->
+        <a href="mailto:ibidumo3@gmail.com" target="_blank" class="contact-card reveal reveal-delay-1">
+          <div class="contact-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <h3>Email</h3>
+          <p>Drop me a line, I reply within 72 hours</p>
+          <span class="contact-link">ibidumo3@gmail.com</span>
+        </a>
+        <!-- ── Update href to your LinkedIn ── -->
+        <a href="https://linkedin.com/in/alwell-kariboro-957806278/" target="_blank" rel="noopener noreferrer" class="contact-card reveal reveal-delay-2">
+          <div class="contact-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          </div>
+          <h3>LinkedIn</h3>
+          <p>Connect for professional networking</p>
+          <span class="contact-link">View Profile →</span>
+        </a>
+        <!-- ── Update href to your GitHub ── -->
+        <a href="https://github.com/astrodumo" target="_blank" rel="noopener noreferrer" class="contact-card reveal reveal-delay-3">
+          <div class="contact-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+          </div>
+          <h3>GitHub</h3>
+          <p>Browse my open-source contributions</p>
+          <span class="contact-link">View Profile →</span>
+        </a>
+      </div>
+
+      <div class="contact-cta-box reveal">
+        <h3>Ready to level up your frontend?</h3>
+        <p>Start with a FREE 30-minute call — we'll pinpoint your biggest UI bottlenecks and what to fix first.</p>
+        <a href="tel:+18722168805" class="btn-light">
+          Book a Discovery Call
+          <svg class="arrow-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════════ -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">alwell<span>.</span>kariboro</div>
+          <p class="footer-desc">Frontend Developer & UI Craftsperson helping product teams ship polished interfaces, scalable design systems, and faster web experiences.</p>
+          <div class="footer-socials">
+            <a href="mailto:ibidumo3@gmail.com" target="_blank" class="social-btn" aria-label="Email">
+              <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </a>
+            <a href="https://linkedin.com/in/alwell-kariboro-957806278/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="https://github.com/astrodumo" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="GitHub">
+              <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Navigate</h4>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#work">Case Studies</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#services">UI Engineering</a></li>
+            <li><a href="#services">Design Systems</a></li>
+            <li><a href="#services">Animation & Motion</a></li>
+            <li><a href="#services">Frontend Consulting</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <!-- ── Update your name and year ── -->
+        <span class="footer-copy">© 2026 Alwell Kariboro. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button id="back-to-top" aria-label="Back to top">
+    <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <!-- ─── Scripts ──────────────────────────────────── -->
+  <script src="js/main.js"></script>
 
 </body>
 </html>
