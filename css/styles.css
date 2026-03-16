@@ -148,7 +148,7 @@ nav {
 }
 .hero-badge-dot {
   width: 8px; height: 8px; border-radius: 50%;
-  background: var(rgb(94, 216, 94)); animation: pulse 2s infinite;
+  background: var(--coral); animation: pulse 2s infinite;
 }
 @keyframes pulse {
   0%, 100% { transform: scale(1); opacity: 1; }
