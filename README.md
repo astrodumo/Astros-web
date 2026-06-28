@@ -33,17 +33,6 @@ portfolio/
 * Easy to customize
 
 
-## Deployment
-
-The site can be deployed easily on platforms like:
-
-* Netlify
-* Vercel
-* GitHub Pages
-
-Simply upload or connect the repository and deploy.
-
-
 ## License
 
 Free to use for personal inspiration or learning.

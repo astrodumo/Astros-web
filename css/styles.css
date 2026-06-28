@@ -289,7 +289,7 @@ nav {
 /* ═══════════════════════════════════════════
    CASE STUDIES
 ═══════════════════════════════════════════ */
-#work { padding: 8rem 0; background: var(--cream); }
+#work { padding: 2rem 0 8rem; background: var(--cream); }
 .work-header { margin-bottom: 4rem; }
 .work-h2 { font-size: clamp(2.2rem, 4vw, 3.4rem); font-weight: 900; color: var(--ink); letter-spacing: -0.03em; margin-bottom: 1rem; max-width: 600px; }
 .work-sub { font-size: 1.05rem; color: var(--ink-light); max-width: 540px; line-height: 1.7; }
@@ -297,30 +297,11 @@ nav {
 @media (max-width: 860px) { .cases-grid { grid-template-columns: 1fr; } }
 .case-card { background: var(--white); border: 1px solid var(--border); border-radius: 1.25rem; padding: 2.4rem; transition: border-color 0.25s, box-shadow 0.25s; box-shadow: var(--shadow); }
 .case-card:hover { border-color: var(--coral); box-shadow: var(--shadow-lg); }
-.case-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.5rem; }
-.case-icon { width: 52px; height: 52px; background: var(--ink); border-radius: 0.9rem; display: flex; align-items: center; justify-content: center; }
-.case-icon svg { width: 24px; height: 24px; fill: none; stroke: var(--cream); stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
 .case-tag { font-size: 0.75rem; font-weight: 700; color: var(--ink-muted); letter-spacing: 0.1em; text-transform: uppercase; }
 .case-title { font-family: 'Fraunces', serif; font-size: 1.7rem; font-weight: 900; color: var(--ink); letter-spacing: -0.025em; margin-bottom: 1rem; line-height: 1.2; }
 .case-desc { font-size: 0.95rem; color: var(--ink-light); line-height: 1.7; margin-bottom: 1.8rem; }
-.case-solution { background: var(--cream); border-radius: 0.9rem; padding: 1.4rem 1.6rem; border: 1px solid var(--border); margin-bottom: 1.8rem; }
-.case-solution h4 { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 700; color: var(--ink); margin-bottom: 1rem; }
-.case-solution ul { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; }
-.case-solution li { display: flex; gap: 0.8rem; align-items: flex-start; font-size: 0.875rem; color: var(--ink-light); line-height: 1.5; }
-.case-solution li::before { content: '→'; color: var(--coral); flex-shrink: 0; font-weight: 700; }
-.case-metrics { background: var(--ink); border-radius: 0.9rem; padding: 1.4rem 1.6rem; margin-bottom: 1.2rem; }
-.metrics-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-.metric-label-b { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #78716C; margin-bottom: 0.3rem; }
-.metric-label-a { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--coral); margin-bottom: 0.3rem; }
-.metric-val-b { font-family: 'Fraunces', serif; font-size: 2.4rem; font-weight: 900; color: #57534E; line-height: 1; margin-bottom: 0.2rem; }
-.metric-val-a { font-family: 'Fraunces', serif; font-size: 2.4rem; font-weight: 900; color: var(--coral); line-height: 1; margin-bottom: 0.2rem; }
-.metric-desc { font-size: 0.78rem; color: #78716C; }
-.metric-desc-a { font-size: 0.78rem; color: rgba(232,87,42,0.7); }
-.case-result { background: var(--cream); border: 1px solid var(--border); border-radius: 0.9rem; padding: 1.2rem 1.4rem; display: flex; gap: 1rem; align-items: flex-start; }
-.result-check { width: 32px; height: 32px; border-radius: 0.5rem; background: rgba(232,87,42,0.12); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-.result-check svg { width: 16px; height: 16px; fill: none; stroke: var(--coral); stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
-.result-title { font-weight: 700; font-size: 0.9rem; color: var(--ink); margin-bottom: 0.2rem; }
-.result-desc { font-size: 0.85rem; color: var(--ink-light); line-height: 1.5; }
+
+
 
 /* ═══════════════════════════════════════════
    CONTACT
@@ -381,3 +362,171 @@ footer { background: var(--ink); padding: 5rem 0 3rem; }
 #back-to-top.visible { opacity: 1; pointer-events: all; }
 #back-to-top:hover { background: var(--coral); transform: scale(1.1); }
 #back-to-top svg { width: 18px; height: 18px; fill: none; stroke: var(--cream); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+
+
+/* ═══════════════════════════════════════════
+   CASE STUDIES — project showcase cards
+═══════════════════════════════════════════ */
+
+@media (max-width: 860px) { .cases-grid { grid-template-columns: 1fr; } }
+
+/* Card shell */
+.case-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 1.25rem;
+  overflow: hidden;                    /* keeps image corners clipped */
+  box-shadow: var(--shadow);
+  transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+}
+.case-card:hover {
+  border-color: var(--coral);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-5px);
+}
+
+/* ── Preview image area ── */
+.case-preview {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;               /* always a 16:9 window */
+  overflow: hidden;
+  background: var(--cream-dark);       /* fallback while image loads */
+}
+.case-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;               /* show the top of the screenshot */
+  display: block;
+  transition: transform 0.5s ease;
+}
+.case-card:hover .case-preview img {
+  transform: scale(1.04);             /* subtle zoom on hover */
+}
+
+/* Overlay that appears on hover */
+.case-preview-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(28, 25, 23, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.case-card:hover .case-preview-overlay { opacity: 1; }
+
+.case-preview-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.5rem;
+  background: var(--white);
+  color: var(--ink);
+  border-radius: 100px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+.case-preview-btn:hover { background: var(--coral); color: var(--white); }
+.case-preview-btn svg { width: 15px; height: 15px; }
+
+/* ── Card body ── */
+.case-body {
+  padding: 1.8rem 2rem 2rem;
+}
+
+/* Category tag — reuse existing .case-tag style, already defined */
+.case-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--coral);
+  background: var(--coral-light);
+  border: 1px solid rgba(232,87,42,0.18);
+  border-radius: 100px;
+  padding: 0.25rem 0.75rem;
+  margin-bottom: 0.9rem;
+}
+
+.case-title {
+  font-family: 'Fraunces', serif;
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--ink);
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+.case-desc {
+  font-size: 0.925rem;
+  color: var(--ink-light);
+  line-height: 1.7;
+  margin-bottom: 1.3rem;
+}
+
+/* Tech stack pills */
+.case-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+.case-pill {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--ink-light);
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  padding: 0.25rem 0.75rem;
+  letter-spacing: 0.02em;
+}
+
+/* Links row */
+.case-links {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--border);
+}
+
+.case-link-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.55rem 1.2rem;
+  background: var(--ink);
+  color: var(--cream);
+  border-radius: 100px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.15s;
+}
+.case-link-primary:hover { background: var(--coral); transform: translateY(-1px); }
+.case-link-primary svg { width: 14px; height: 14px; }
+
+.case-link-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.55rem 1.2rem;
+  background: transparent;
+  color: var(--ink-light);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: border-color 0.2s, color 0.2s;
+}
+.case-link-ghost:hover { border-color: var(--ink); color: var(--ink); }
+.case-link-ghost svg { width: 14px; height: 14px; }
